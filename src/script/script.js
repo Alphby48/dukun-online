@@ -1,8 +1,8 @@
-import detail from "./member-detail.js";
-import { kodam } from "./kodam.js";
-import { pakan } from "./pakan.js";
-import { ambu } from "./ambu.js";
-import { ngawi } from "./ngawi.js";
+import detail from "./data/member-detail.js";
+import { kodam } from "./data/kodam.js";
+import { pakan } from "./data/pakan.js";
+import { ambu } from "./data/ambu.js";
+import { ngawi } from "./data/ngawi.js";
 const formInput = document.querySelector(".form-input");
 const selectInput = document.querySelector(".form-select");
 const inputName = document.querySelector(".form-control");
