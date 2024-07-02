@@ -9,9 +9,10 @@
   border: 1px solid black;
 }
 
-h1 {
+.h1 {
   width: 100%;
   text-align: center;
+  padding-top: 1rem;
 }
 
 .container {
@@ -22,8 +23,15 @@ h1 {
     width: 50%;
     height: 400px;
     padding: 2rem;
-    background-color: cornflowerblue;
+    background: linear-gradient(rgba(53, 51, 51, 0.822), rgba(54, 53, 53, 0.7)),
+      url("../image.png");
+
+    // background-color: #39393b38;
+
+    background-position: center;
+    background-size: cover;
     border-radius: 25px;
+    color: rgb(255, 255, 255);
     @include flex-box(column, center);
     .select-options {
       width: 100%;
@@ -41,6 +49,42 @@ h1 {
     @include flex-box(column, center);
     img {
       width: 300px;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: rgb(176, 246, 255);
+  padding: 1rem;
+
+  .footer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .social-box {
+      display: flex;
+      width: 90%;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 90%;
+        list-style: none;
+
+        li a {
+          font-size: 24px;
+          color: rgb(179, 28, 224);
+        }
+      }
+    }
+    .cardt {
+      h2 {
+        font-size: 1.3rem;
+      }
     }
   }
 }

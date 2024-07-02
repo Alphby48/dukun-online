@@ -1,6 +1,7 @@
-h1 {
+.h1 {
   width: 100%;
   text-align: center;
+  padding-top: 1rem;
 }
 
 .container {
@@ -15,8 +16,11 @@ h1 {
   width: 50%;
   height: 400px;
   padding: 2rem;
-  background-color: cornflowerblue;
+  background: linear-gradient(rgba(53, 51, 51, 0.822), rgba(54, 53, 53, 0.7)), url("../image.png");
+  background-position: center;
+  background-size: cover;
   border-radius: 25px;
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,6 +41,36 @@ h1 {
 }
 .modal-body .modal-box img {
   width: 300px;
+}
+
+.footer {
+  width: 100%;
+  background-color: rgb(176, 246, 255);
+  padding: 1rem;
+}
+.footer .footer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.footer .footer-box .social-box {
+  display: flex;
+  width: 90%;
+}
+.footer .footer-box .social-box ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90%;
+  list-style: none;
+}
+.footer .footer-box .social-box ul li a {
+  font-size: 24px;
+  color: rgb(179, 28, 224);
+}
+.footer .footer-box .cardt h2 {
+  font-size: 1.3rem;
 }
 
 @media (max-width: 550px) {

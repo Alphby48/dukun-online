@@ -2,6 +2,7 @@ import detail from "./member-detail.js";
 import { kodam } from "./kodam.js";
 import { pakan } from "./pakan.js";
 import { ambu } from "./ambu.js";
+import { ngawi } from "./ngawi.js";
 const formInput = document.querySelector(".form-input");
 const selectInput = document.querySelector(".form-select");
 const inputName = document.querySelector(".form-control");
@@ -19,6 +20,8 @@ formInput.addEventListener("submit", function (e) {
     cekPakan();
   } else if (selectInput.value === "ambu") {
     cekAmbu();
+  } else if (selectInput.value === "jomok kesukaan") {
+    cekJomok();
   }
 
   reset();
@@ -30,13 +33,7 @@ function cekOshi() {
   const uitampil = showdetail.map((dm) => uiModal(dm, inputName.value));
   const cek = showdetail.map((dm) => result(dm));
 
-  if (!showdetail.length == 0) {
-    modalBody.innerHTML = uitampil;
-    cekHasil.innerHTML = cek;
-  } else {
-    modalBody.innerHTML = uikosong();
-    cekHasil.innerHTML = `<h2>${inputName.value} kosong</h2>`;
-  }
+  filterData(showdetail, uitampil, cek);
 }
 
 function cekKodam() {
@@ -45,14 +42,7 @@ function cekKodam() {
   const uitampil = showKodam.map((dm) => uiModal(dm, inputName.value));
   const cek = showKodam.map((dm) => result(dm));
 
-  if (!showKodam.length == 0) {
-    console.log(angka);
-    modalBody.innerHTML = uitampil;
-    cekHasil.innerHTML = cek;
-  } else {
-    modalBody.innerHTML = uikosong();
-    cekHasil.innerHTML = `<h2>${inputName.value} kosong</h2>`;
-  }
+  filterData(showKodam, uitampil, cek);
 }
 
 function cekAmbu() {
@@ -61,14 +51,7 @@ function cekAmbu() {
   const uitampil = showAmbu.map((dm) => uiModal(dm, inputName.value));
   const cek = showAmbu.map((dm) => result(dm));
 
-  if (!showAmbu.length == 0) {
-    console.log(angka);
-    modalBody.innerHTML = uitampil;
-    cekHasil.innerHTML = cek;
-  } else {
-    modalBody.innerHTML = uikosong();
-    cekHasil.innerHTML = `<h2>${inputName.value} kosong</h2>`;
-  }
+  filterData(showAmbu, uitampil, cek);
 }
 
 function cekPakan() {
@@ -77,14 +60,16 @@ function cekPakan() {
   const uitampil = showPakan.map((dm) => uiModal(dm, inputName.value));
   const cek = showPakan.map((dm) => result(dm));
 
-  if (!showPakan.length == 0) {
-    console.log(angka);
-    modalBody.innerHTML = uitampil;
-    cekHasil.innerHTML = cek;
-  } else {
-    modalBody.innerHTML = uikosong();
-    cekHasil.innerHTML = `<h2>${inputName.value} kosong</h2>`;
-  }
+  filterData(showPakan, uitampil, cek);
+}
+
+function cekJomok() {
+  const angka = math(8);
+  const showJomok = filter(ngawi, angka);
+  const uitampil = showJomok.map((dm) => uiModal(dm, inputName.value));
+  const cek = showJomok.map((dm) => result(dm));
+
+  filterData(showJomok, uitampil, cek);
 }
 
 function filter(data, r) {
@@ -93,6 +78,20 @@ function filter(data, r) {
 
 function math(num) {
   return Math.floor(Math.random() * num) + 1;
+}
+
+function filterData(data, uitampil, cek) {
+  if (!inputName.value.trim()) {
+    alert(`masukkan nama yang benar`);
+  } else if (!data.length == 0) {
+    // console.log(rendem);
+    console.log(inputName.value.length);
+    modalBody.innerHTML = uitampil;
+    cekHasil.innerHTML = cek;
+  } else {
+    modalBody.innerHTML = uikosong();
+    cekHasil.innerHTML = `<h2>${inputName.value} kosong</h2>`;
+  }
 }
 
 function uiModal(ui, inputName) {
