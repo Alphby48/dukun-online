@@ -1,3 +1,4 @@
+@import "bootstrap/scss/bootstrap";
 @mixin flex-box($direct: row, $space: center) {
   display: flex;
   justify-content: $space;
@@ -24,7 +25,8 @@
     height: 400px;
     padding: 2rem;
     background: linear-gradient(rgba(53, 51, 51, 0.822), rgba(54, 53, 53, 0.7)),
-      url("../image.png");
+      url("../img/image.png");
+    // background-color: chartreuse;
 
     // background-color: #39393b38;
 

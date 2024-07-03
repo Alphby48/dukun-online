@@ -1,3 +1,6 @@
+import css from "./scss/main.scss";
+require("./vendor.js");
+//
 import { DukunOnline } from "./script/dukun.config.js";
 import { filter } from "./script/filtering.js";
 import { filterData } from "./script/filtering.js";
